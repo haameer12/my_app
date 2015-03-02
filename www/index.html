@@ -25,7 +25,7 @@
 				// here is where you might want to send it the regID for later use.
 					$.ajax({ type: "POST",
 							url: "http://192.168.1.141/set_phone_key.php", //رابط السيرفر الخاص بي
-							data: {regID : e.regid,user:window.localStorage.getItem('uuid'),OS:device.platform},                   //لاستقبال البيانات في ال ASP استعمل request.form["regID"]
+							data: {regID : e.regid,user:device.uuid,OS:device.platform},                   //لاستقبال البيانات في ال ASP استعمل request.form["regID"]
 							async: false,
 							success : function(text)
 							{
@@ -137,7 +137,7 @@
 				console.log('SMGROUP ::::::::::::::::::::::::::::::::::::    Notification Callback Success! Result (ios) = '+result);
 					$.ajax({ type: "POST",
 							url: "http://192.168.1.141/set_phone_key.php", 
-							data: {regID : result,user:window.localStorage.getItem('uuid'),OS:device.platform},
+							data: {regID : result,user:device.uuid,OS:device.platform},
 							async: false,
 							success : function(text)
 							{
